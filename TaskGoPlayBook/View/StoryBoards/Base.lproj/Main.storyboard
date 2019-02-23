@@ -41,14 +41,14 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rtt-f7-Aav">
-                                <rect key="frame" x="0.0" y="158" width="375" height="509"/>
+                                <rect key="frame" x="0.0" y="150.5" width="375" height="516.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pt0-At-GzZ">
-                                <rect key="frame" x="0.0" y="108" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="100.5" width="375" height="50"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Q8b-zL-C1K"/>
+                                    <constraint firstAttribute="height" constant="50" id="XxU-AL-tvG"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gSE-Yl-QJa">
                                     <size key="itemSize" width="100" height="50"/>
@@ -62,19 +62,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="5Th-wk-ZLd"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHR-av-dGb">
+                                <rect key="frame" x="0.0" y="100" width="375" height="0.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="3Z7-f4-gjN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gDg-GU-8eF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="13m-ee-9od"/>
-                            <constraint firstItem="Pt0-At-GzZ" firstAttribute="leading" secondItem="Rtt-f7-Aav" secondAttribute="leading" id="4R2-Ih-Qj4"/>
-                            <constraint firstItem="Pt0-At-GzZ" firstAttribute="centerX" secondItem="gDg-GU-8eF" secondAttribute="centerX" id="4fd-Qf-cgb"/>
-                            <constraint firstItem="Rtt-f7-Aav" firstAttribute="top" secondItem="Pt0-At-GzZ" secondAttribute="bottom" id="7FW-nM-Ilz"/>
-                            <constraint firstItem="Rtt-f7-Aav" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Al0-Nb-rpS"/>
-                            <constraint firstItem="Pt0-At-GzZ" firstAttribute="top" secondItem="gDg-GU-8eF" secondAttribute="bottom" constant="8" symbolic="YES" id="QaQ-FW-X0j"/>
+                            <constraint firstItem="Rtt-f7-Aav" firstAttribute="top" secondItem="Pt0-At-GzZ" secondAttribute="bottom" id="588-Gr-FlE"/>
+                            <constraint firstItem="Pt0-At-GzZ" firstAttribute="trailing" secondItem="RHR-av-dGb" secondAttribute="trailing" id="5IK-a7-dio"/>
+                            <constraint firstItem="Pt0-At-GzZ" firstAttribute="top" secondItem="RHR-av-dGb" secondAttribute="bottom" id="DRf-PB-8hG"/>
+                            <constraint firstItem="RHR-av-dGb" firstAttribute="top" secondItem="gDg-GU-8eF" secondAttribute="bottom" id="EMs-ac-mCl"/>
+                            <constraint firstItem="Pt0-At-GzZ" firstAttribute="leading" secondItem="RHR-av-dGb" secondAttribute="leading" id="Hh5-t9-60b"/>
+                            <constraint firstItem="RHR-av-dGb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Irp-DB-RCT"/>
                             <constraint firstItem="gDg-GU-8eF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Rkd-aC-QYc"/>
-                            <constraint firstItem="Pt0-At-GzZ" firstAttribute="trailing" secondItem="Rtt-f7-Aav" secondAttribute="trailing" id="SL5-jG-5GJ"/>
+                            <constraint firstItem="Pt0-At-GzZ" firstAttribute="trailing" secondItem="Rtt-f7-Aav" secondAttribute="trailing" id="Tyz-H7-83G"/>
+                            <constraint firstItem="Rtt-f7-Aav" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ygw-zE-GGa"/>
+                            <constraint firstItem="Pt0-At-GzZ" firstAttribute="leading" secondItem="Rtt-f7-Aav" secondAttribute="leading" id="jTU-26-1St"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gDg-GU-8eF" secondAttribute="trailing" constant="8" id="phQ-QR-pRA"/>
-                            <constraint firstItem="Pt0-At-GzZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qGV-jn-gP7"/>
+                            <constraint firstAttribute="trailing" secondItem="RHR-av-dGb" secondAttribute="trailing" id="yXm-TC-Cl5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

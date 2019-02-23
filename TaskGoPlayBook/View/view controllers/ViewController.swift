@@ -90,11 +90,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.searchBarCenterInit()
     }
     
-    
-    func addSearchBar()
-    {
-        
-    }
+
     
     // Get the latitude and Longitude of User
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -149,7 +145,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                         self.LocationDisplayLabel.text = pm.administrativeArea ?? "nil"
                         self.city = "\(pm.administrativeArea ?? "")"
                     
-                          self.serverTournamentData()
+                          self.getTournamentData()
                         
                     }
                     print(addressString)
@@ -157,6 +153,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         })
         locationManager.stopUpdatingLocation()
     }
+    //customising searchbar
     func searchBarCenterInit(){
         if let searchBarTextField = searchBar.value(forKey: "searchField") as? UITextField {
             
@@ -183,6 +180,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+    
+    // updating the list header
     func tableHeader(title:String, description: String)
     {
         let headerView = UIView()
@@ -205,7 +204,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.displayTableView.tableHeaderView = headerView
     }
     
-    func serverTournamentData()
+    func getTournamentData()
     {
         
         print("Tournament Page: \(tournamentPageNo)")
@@ -243,7 +242,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func serverGroundData()
+    func getGroundData()
     {
         
         print(GroundPageNo)
@@ -279,7 +278,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func serverTeamData()
+    func getTeamData()
     {
         
         
@@ -316,7 +315,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
     }
     
-    func serverPlayerData()
+    func getPlayerData()
     {
         print(playerPageNo)
         
@@ -402,7 +401,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
             self.filteredTournamentArray.removeAll()
             self.tournamentArray = nil
             self.toFilteredTournamentArray.removeAll()
-            self.serverTournamentData()
+            self.getTournamentData()
         }
         else if indexPath.item == 1
         {
@@ -412,7 +411,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
                 self.filteredGroundArray.removeAll()
                 self.groundArray = nil
                 self.toFilteredGroundArray.removeAll()
-                self.serverGroundData()
+                self.getGroundData()
         }
         else if indexPath.item == 2
         {
@@ -423,7 +422,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
             self.filteredTeamArray.removeAll()
             self.TeamArray = nil
             self.toFilteredTeamArray.removeAll()
-            self.serverTeamData()
+            self.getTeamData()
             self.displayTableView.reloadData()
         }
         else if indexPath.item == 3
@@ -434,7 +433,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
             self.filteredPlayerArray.removeAll()
             self.playerArray = nil
             self.toFilteredPlayerArray.removeAll()
-            self.serverPlayerData()
+            self.getPlayerData()
             self.displayTableView.reloadData()
         }
         
@@ -557,7 +556,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
             if indexPath.row == lastElement && self.tournamentPageNo <= self.tournamentLastPage {
                 self.tournamentPageNo += 1
                 print(tournamentPageNo)
-                self.serverTournamentData()
+                self.getTournamentData()
             }
         }
         if searchScopeTwo == SearchScopeVal.Ground.rawValue
@@ -566,7 +565,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
             if indexPath.row == lastElement && self.GroundPageNo <= self.lastPage {
                 self.GroundPageNo += 1
                 print(GroundPageNo)
-                self.serverGroundData()
+                self.getGroundData()
             }
         }
         if searchScopeTwo == SearchScopeVal.Team.rawValue
@@ -575,7 +574,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
             if indexPath.row == lastElement && self.teamPageNo <= self.teamLastPage {
                 self.teamPageNo += 1
                 print(teamPageNo)
-                self.serverTeamData()
+                self.getTeamData()
             }
         }
         if searchScopeTwo == SearchScopeVal.Players.rawValue
@@ -584,7 +583,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
             if indexPath.row == lastElement && self.playerPageNo <= self.playerLastPage {
                 self.playerPageNo += 1
                 print(playerPageNo)
-                self.serverPlayerData()
+                self.getPlayerData()
             }
         }
     }
