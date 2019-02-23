@@ -51,25 +51,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        searchScopeCollectionView.delegate = self
+        searchScopeCollectionView.dataSource = self
         //to select the tournament search scope by default
         let indexPath = IndexPath.init(item: 0, section: 0)
         searchScopeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .right)
-        
+        displayTableView.delegate = self
+        displayTableView.dataSource = self
         // Request Location permissions
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
+       
+       
+        
+        
+        self.searchScopeCollectionView.register(UINib(nibName: "SearchScopeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "customCell")
+        self.displayTableView.register(UINib(nibName: "TournamentTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        self.displayTableView.register(UINib(nibName: "GroundTableViewCell", bundle: nil), forCellReuseIdentifier: "customCellOne")
+        self.displayTableView.register(UINib(nibName: "TeamTableViewCell", bundle: nil), forCellReuseIdentifier: "customCellTwo")
+        self.displayTableView.register(UINib(nibName: "PlayerTableViewCell", bundle: nil), forCellReuseIdentifier: "customCellThree")
         
         // Setting the delegates
-        self.setDelegates()
-        //Registering the cells to tableview
-        self.registerCells()
+       
         //adding the searchBar
-        self.addSearchBar()
-        
+        searchBar.placeholder = "Start Searching"
+        searchBar.tintColor = .white
+        self.navigationItem.titleView = searchBar
+        searchBar.delegate = self
         self.tableHeader(title: SearchScopeVal.Tournament.rawValue, description: SearchScopeVal.Tournament.Description())
         
 
@@ -79,31 +90,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.searchBarCenterInit()
     }
     
-    func registerCells()
-    {
-        DispatchQueue.main.async {
-            self.searchScopeCollectionView.register(UINib(nibName: "SearchScopeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "customCell")
-            self.displayTableView.register(UINib(nibName: "TournamentTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
-            self.displayTableView.register(UINib(nibName: "GroundTableViewCell", bundle: nil), forCellReuseIdentifier: "customCellOne")
-            self.displayTableView.register(UINib(nibName: "TeamTableViewCell", bundle: nil), forCellReuseIdentifier: "customCellTwo")
-            self.displayTableView.register(UINib(nibName: "PlayerTableViewCell", bundle: nil), forCellReuseIdentifier: "customCellThree")
-        }
-    }
-    
-    func setDelegates()
-    {
-        searchScopeCollectionView.delegate = self
-        searchScopeCollectionView.dataSource = self
-        displayTableView.delegate = self
-        displayTableView.dataSource = self
-        searchBar.delegate = self
-    }
     
     func addSearchBar()
     {
-        searchBar.placeholder = "Start Searching"
-        searchBar.tintColor = .white
-        self.navigationItem.titleView = searchBar
+        
     }
     
     // Get the latitude and Longitude of User
@@ -246,9 +236,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     self.toFilteredTournamentArray = self.filteredTournamentArray
                     
                 }
+                self.displayTableView.reloadData()
                 print("Count: \(self.toFilteredTournamentArray.count)")
             })
-            self.displayTableView.reloadData()
+            
         }
     }
     
@@ -522,10 +513,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
         {
             let cell: TeamTableViewCell = tableView.dequeueReusableCell(withIdentifier: "customCellTwo", for: indexPath) as! TeamTableViewCell
             cell.backgroundColor = UIColor.clear
-            cell.titleLabel.text = toFilteredTeamArray[indexPath.row].name
-            cell.locationLabel.text = toFilteredTeamArray[indexPath.row].city
-            cell.sportLabel.text = toFilteredTeamArray[indexPath.row].sport ?? "-"
-            cell.logoImageView.setCustomImage(toFilteredTeamArray[indexPath.row].team_pic)
+            cell.titleLabel.text = filteredTeamArray[indexPath.row].name
+            cell.locationLabel.text = filteredTeamArray[indexPath.row].city
+            cell.sportLabel.text = filteredTeamArray[indexPath.row].sport ?? "-"
+            cell.logoImageView.setCustomImage(filteredTeamArray[indexPath.row].team_pic)
             cell.logoImageView.layer.cornerRadius = cell.logoImageView.frame.size.width / 2
             cell.logoImageView.layer.masksToBounds = true
             return cell
@@ -653,7 +644,7 @@ extension ViewController: UISearchBarDelegate
         }
         if self.searchScopeTwo == SearchScopeVal.Team.rawValue
         {
-            self.filteredTeamArray = self.toFilteredTeamArray
+            self.toFilteredTeamArray = self.filteredTeamArray
             self.displayTableView.reloadData()
         }
         if self.searchScopeTwo == SearchScopeVal.Players.rawValue
