@@ -129,6 +129,15 @@
 			path = "Ground cell";
 			sourceTree = "<group>";
 		};
+		0B7314132221B20F00578DD4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0BB54EB2221F2DC600187EFD /* JSONDecoder-Remote.swift */,
+				0BB54EB0221F2D9A00187EFD /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		0BB54E67221ED89200187EFD = {
 			isa = PBXGroup;
 			children = (
@@ -154,8 +163,7 @@
 			children = (
 				0BB54E73221ED89200187EFD /* AppDelegate.swift */,
 				0B731411222158EA00578DD4 /* Helper.swift */,
-				0BB54EB2221F2DC600187EFD /* JSONDecoder-Remote.swift */,
-				0BB54EB0221F2D9A00187EFD /* Service.swift */,
+				0B7314132221B20F00578DD4 /* Service */,
 				0BB54E77221ED89200187EFD /* Main.storyboard */,
 				0BB54EAF221F24B800187EFD /* Model */,
 				0BB54EAC221F18F600187EFD /* view Controllers */,

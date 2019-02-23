@@ -8,6 +8,25 @@
 
 import Foundation
 
+enum SearchScopeVal: String
+{
+    case Tournament = "Tournament"
+    case Ground = "Ground"
+    case Team = "Team"
+    case Players = "Players"
+    
+    func Description() -> String
+    {
+        switch self
+        {
+        case .Tournament: return "Take part in exciting tournaments near you or follow them live"
+        case .Ground: return "Discover Grounds nearby your location"
+        case .Team: return "Create your own teams or join teams over goplaybook and grow"
+        case .Players: return "Follow top players and fiends and keep yourself updated with their activities"
+        }
+    }
+}
+
 struct TournamentData: Codable
 {
     var data: [Tournament]
