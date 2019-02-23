@@ -138,6 +138,30 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		0B7314142221DB1B00578DD4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0B731411222158EA00578DD4 /* Helper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		0B7314152221DB3600578DD4 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				0BB54E77221ED89200187EFD /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		0B7314162221DB4700578DD4 /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0BB54E75221ED89200187EFD /* ViewController.swift */,
+			);
+			path = "view controllers";
+			sourceTree = "<group>";
+		};
 		0BB54E67221ED89200187EFD = {
 			isa = PBXGroup;
 			children = (
@@ -162,11 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				0BB54E73221ED89200187EFD /* AppDelegate.swift */,
-				0B731411222158EA00578DD4 /* Helper.swift */,
+				0B7314142221DB1B00578DD4 /* Helper */,
 				0B7314132221B20F00578DD4 /* Service */,
-				0BB54E77221ED89200187EFD /* Main.storyboard */,
 				0BB54EAF221F24B800187EFD /* Model */,
-				0BB54EAC221F18F600187EFD /* view Controllers */,
+				0BB54EAC221F18F600187EFD /* View */,
 				0BB54E7A221ED89700187EFD /* Assets.xcassets */,
 				0BB54E7C221ED89700187EFD /* LaunchScreen.storyboard */,
 				0BB54E7F221ED89700187EFD /* Info.plist */,
@@ -201,17 +224,18 @@
 			path = SearchScopeCollectionView;
 			sourceTree = "<group>";
 		};
-		0BB54EAC221F18F600187EFD /* view Controllers */ = {
+		0BB54EAC221F18F600187EFD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0BB54E75221ED89200187EFD /* ViewController.swift */,
+				0B7314162221DB4700578DD4 /* view controllers */,
+				0B7314152221DB3600578DD4 /* StoryBoards */,
 				0B290AB3222112C500E16875 /* Player cell */,
 				0B290AAE22203D8900E16875 /* Team Cell */,
 				0B5DC2D422201AD500E79FD5 /* Ground cell */,
 				0BB54EB8221FB1C800187EFD /* Tournament cell */,
 				0BB54EA9221EEC5500187EFD /* SearchScopeCollectionView */,
 			);
-			path = "view Controllers";
+			path = View;
 			sourceTree = "<group>";
 		};
 		0BB54EAF221F24B800187EFD /* Model */ = {
