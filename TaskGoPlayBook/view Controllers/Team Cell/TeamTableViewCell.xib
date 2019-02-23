@@ -65,7 +65,7 @@
             <connections>
                 <outlet property="locationLabel" destination="IEz-w7-QKc" id="sm7-AI-m9e"/>
                 <outlet property="logoImageView" destination="Hr6-cz-DuR" id="d0W-Du-9k1"/>
-                <outlet property="sportLabel" destination="xLW-mQ-2Oe" id="7ud-dw-11o"/>
+                <outlet property="sportLabel" destination="xLW-mQ-2Oe" id="KAk-cf-Ch7"/>
                 <outlet property="titleLabel" destination="qQE-9N-rdy" id="fGm-jc-Oxe"/>
             </connections>
             <point key="canvasLocation" x="148.80000000000001" y="141.22938530734635"/>

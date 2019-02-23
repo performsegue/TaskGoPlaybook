@@ -11,7 +11,8 @@ import UIKit
 class TeamTableViewCell: UITableViewCell {
     @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var sportLabel: UILabel!
+    @IBOutlet weak var sportLabel: UILabel!
+    
     @IBOutlet var locationLabel: UILabel!
     
     override func awakeFromNib() {

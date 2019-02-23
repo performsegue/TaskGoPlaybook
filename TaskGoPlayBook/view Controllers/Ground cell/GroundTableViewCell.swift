@@ -9,7 +9,11 @@
 import UIKit
 
 class GroundTableViewCell: UITableViewCell {
-
+    @IBOutlet var logoImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var locationLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

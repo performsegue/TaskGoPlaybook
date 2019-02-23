@@ -8,10 +8,9 @@
 
 import UIKit
 
-class TeamTableViewCell: UITableViewCell {
+class PlayerTableViewCell: UITableViewCell {
     @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var sportLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     
     override func awakeFromNib() {

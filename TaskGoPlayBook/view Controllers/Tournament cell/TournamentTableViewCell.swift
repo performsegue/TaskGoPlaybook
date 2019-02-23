@@ -10,6 +10,13 @@ import UIKit
 
 class TournamentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var sportTypelabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

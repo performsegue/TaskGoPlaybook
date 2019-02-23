@@ -23,16 +23,27 @@
                         <rect key="frame" x="5" y="5" width="100" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjS-vo-gRD">
-                                <rect key="frame" x="29" y="9.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="33.5" y="12" width="33" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKT-jB-4K1">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="scopeSelected" destination="gTV-IL-0wX" eventType="touchUpInside" id="7d8-F6-MoN"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.81176470588235294" green="0.86274509803921573" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="OKT-jB-4K1" firstAttribute="top" secondItem="1MK-uw-X1C" secondAttribute="top" id="7AS-E9-WTl"/>
                             <constraint firstAttribute="height" constant="40" id="8sx-cp-vFA"/>
+                            <constraint firstAttribute="trailing" secondItem="OKT-jB-4K1" secondAttribute="trailing" id="VNo-2r-e6G"/>
                             <constraint firstAttribute="width" constant="100" id="Vod-Xz-vnB"/>
+                            <constraint firstAttribute="bottom" secondItem="OKT-jB-4K1" secondAttribute="bottom" id="Zoe-k5-F3E"/>
+                            <constraint firstItem="OKT-jB-4K1" firstAttribute="leading" secondItem="1MK-uw-X1C" secondAttribute="leading" id="eqI-0B-Rk8"/>
                             <constraint firstItem="hjS-vo-gRD" firstAttribute="centerX" secondItem="1MK-uw-X1C" secondAttribute="centerX" id="ssX-eY-4mw"/>
                             <constraint firstItem="hjS-vo-gRD" firstAttribute="centerY" secondItem="1MK-uw-X1C" secondAttribute="centerY" id="yd9-PM-x0R"/>
                         </constraints>
@@ -49,6 +60,7 @@
             <size key="customSize" width="111" height="50"/>
             <connections>
                 <outlet property="backgoundSelectionView" destination="1MK-uw-X1C" id="Rd0-hb-mRZ"/>
+                <outlet property="scopeNameButton" destination="OKT-jB-4K1" id="4FF-x4-6zY"/>
                 <outlet property="scopeNameLabel" destination="hjS-vo-gRD" id="ZOm-eU-kAm"/>
             </connections>
             <point key="canvasLocation" x="186.40000000000001" y="154.72263868065968"/>
